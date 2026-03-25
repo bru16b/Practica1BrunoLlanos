@@ -1,19 +1,23 @@
 import random
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
-word = random.choice(words)
+words = {
+    "colores" : ["azul", "rojo", "verde", "violeta", "amarillo", "negro"],
+    "deportes" : ["futbol", "handball", "tenis", "ajedrez", "natacion"],
+    "paises" : ["Argentina", "Peru", "Bolivia", "Francia", "Alemania", "Bulgaria"]
+}
 guessed = []
 attempts = 6
 print("¡Bienvenido al Ahorcado!")
 print()
+print(f"Categorias disponibles: ")
+for elem in words:
+    print(elem)
+
+categoria = input("Ingrese con que categoria jugar: ")
+while categoria not in words:
+    categoria = input("Categoria invalida ingrese otra: ")
+word = random.choice(words[categoria])
+print()
+
 while attempts > 0:
 # Mostrar progreso: letras adivinadas y guiones para las que faltan
     progress = ""
