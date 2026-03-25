@@ -45,3 +45,4 @@ while attempts > 0:
         print("Entrada no valida")
 else:
     print(f"¡Perdiste! La palabra era: {word}")
+print(f"Puntaje final: {attempts}") #Los intentos podrian servir como puntaje, ya que arranca en 6 y por cada error resta uno.
